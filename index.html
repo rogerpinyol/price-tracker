@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Price Tracker</title>
+  <!-- Include Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Make the chart container responsive */
+    .chart-container {
+      width: 90%;
+      height: 60vh; /* 70% of the viewport height */
+      max-height: 600px; /* Limit maximum height */
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Crypto Price Tracker</h1>
+
+  <!-- Input for cryptocurrency pair -->
+  <label for="crypto-pair">Enter Cryptocurrency Pair (e.g., btc/usd):</label>
+  <input type="text" id="crypto-pair" placeholder="btc/usd">
+  <button onclick="fetchData()">Get Data</button>
+
+  <!-- Buttons for historical timeframes -->
+  <div>
+    <button onclick="fetchHistoricalData('1d')">24 Hours</button>
+    <button onclick="fetchHistoricalData('7d')">7 Days</button>
+    <button onclick="fetchHistoricalData('30d')">30 Days</button>
+    <button onclick="fetchHistoricalData('1y')">1 Year</button>
+    <button onclick="fetchHistoricalData('all')">All Time</button>
+  </div>
+
+  <!-- Display current data -->
+  <h2>Current Data</h2>
+  <div id="current-data">
+    <p>Price: <span id="price"></span></p>
+    <p>Market Cap: <span id="market-cap"></span></p>
+    <p>24h Volume: <span id="volume"></span></p>
+  </div>
+
+  <!-- Display historical data chart -->
+  <h2>Historical Data</h2>
+  <div class="chart-container">
+    <canvas id="historical-chart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
