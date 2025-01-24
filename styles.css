@@ -1,0 +1,141 @@
+  :root {
+    --indigo-50: #EEF2FF;
+    --indigo-100: #E0E7FF;
+    --indigo-200: #C7D2FE;
+    --indigo-300: #A5B4FC;
+    --indigo-400: #818CF8;
+    --indigo-500: #6366F1;
+    --indigo-600: #4F46E5;
+    --indigo-700: #4338CA;
+    --indigo-800: #3730A3;
+    --indigo-900: #312E81;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--indigo-50);
+    color: var(--indigo-900);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--indigo-700);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    color: var(--indigo-600);
+    margin-top: 30px;
+  }
+
+  label {
+    font-size: 1rem;
+    color: var(--indigo-600);
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--indigo-300);
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--indigo-600);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: var(--indigo-700);
+  }
+
+  div {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+
+  #current-data {
+    display: none; /* Hidden initially */
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--indigo-300);
+    border-radius: 10px;
+    background-color: var(--indigo-100);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  #current-data img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  #current-data p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--indigo-800);
+  }
+
+  .chart-container {
+    display: none; /* Hidden initially */
+    margin-top: 30px;
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+    border: 1px solid var(--indigo-300);
+    border-radius: 10px;
+    background-color: var(--indigo-100);
+    padding: 15px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    div {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .chart-container {
+      height: 300px;
+    }
+  }
