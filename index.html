@@ -11,18 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Include Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <h1>Crypto Price Tracker</h1>
 
   <!-- Input for cryptocurrency pair -->
-  <label for="crypto-pair">Enter Cryptocurrency Pair (e.g., btc/usd):</label>
-  <input type="text" id="crypto-pair" placeholder="btc/usd">
-  <button onclick="fetchData()">Get Data</button>
+  <div class="input-container">
+    <input type="text" id="crypto-pair" placeholder="BTC/USD... ">
+    <button onclick="fetchData()">Get Data</button>
+  </div>
 
   <!-- Buttons for historical timeframes -->
-  <div>
+  <div class="timeframe-buttons" style="display: none;">
     <button onclick="fetchHistoricalData('1d')">24 Hours</button>
     <button onclick="fetchHistoricalData('7d')">7 Days</button>
     <button onclick="fetchHistoricalData('30d')">30 Days</button>
@@ -33,9 +34,12 @@
   <!-- Display current data -->
   <h2>Current Data</h2>
   <div id="current-data">
-    <p>Price: <span id="price"></span></p>
-    <p>Market Cap: <span id="market-cap"></span></p>
-    <p>24h Volume: <span id="volume"></span></p>
+    <img src="placeholder.png" alt="Cryptocurrency logo">
+    <div class="text">
+      <p>Price: <span id="price"></span></p>
+      <p>Market Cap: <span id="market-cap"></span></p>
+      <p>24h Volume: <span id="volume"></span></p>
+    </div>
   </div>
 
   <!-- Display historical data chart -->
