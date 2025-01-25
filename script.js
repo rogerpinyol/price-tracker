@@ -31,7 +31,7 @@ async function getCryptoId(input) {
 
     // Fetch market data for all coins with the same symbol
     const marketData = await fetch(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${bySymbol.map(crypto => crypto.id).join(",")}`
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${bySymbol.map(crypto => crypto.id).join(",")}&x_cg_demo_api_key=${API_KEY}`
     ).then(response => response.json());
 
     // Select the coin with the highest market cap
@@ -168,7 +168,7 @@ async function fetchData() {
   }
 
   // Fetch current data
-  fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vsCurrency}&ids=${cryptoId}`)
+  fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vsCurrency}&ids=${cryptoId}&x_cg_demo_api_key=${API_KEY}`)
     .then(response => response.json())
     .then(data => {
       if (data.length === 0) {

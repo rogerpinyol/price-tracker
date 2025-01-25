@@ -13,7 +13,7 @@
 
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
     background-color: var(--indigo-50);
     color: var(--indigo-900);
     display: flex;
@@ -147,7 +147,6 @@
 
 /* Existing chart container styling - keep this */
 .chart-container {
-  margin-top: 30px;
   width: 90%;
   max-width: 800px;
   height: 400px;
